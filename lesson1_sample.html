@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>KFund.School</title>
+	<link rel="shortcut icon" href="img/logo/favicon.png" type="image/png">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="header-wrap">
+				<a href="index.html" class="logo"><img src="img/logo/logo.png" alt="logo"></a>
+				<nav class="menu">
+					<ul class="menu__list">
+						<li class="menu__item"><a href="index.html#resources">Ресурсы</a></li>
+						<li class="menu__item"><a href="index.html#lessons">Уроки</a></li>
+						<li class="menu__item"><a href="index.html#generators">онлайн-генераторы</a></li>
+						<li class="menu__item"><a href="index.html#tests">Тесты</a></li>
+						<!-- <div class="menu__underline"></div> -->
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main>
+		<section class="lesson">
+			<div class="container">
+				<div class="wrap">
+					<h2 class="lesson__title">"Достучаться" до блока, элемента.<br> БЭМ.
+					</h2>
+					<ul class="lesson__list">
+						<li class="lesson__item"><a href="#theory1">Селекторы. Как "достучаться" до блока, элемента?</a></li>
+						<li class="lesson__item"><a href="#theory2">Важность селекторов.</a></li>
+						<li class="lesson__item"><a href="#theory3">Методология БЭМ.</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="remember">
+			<div class="container">
+				<div class="wrap">
+					<ol class="remember__list list_blue">
+						<li class="remember__item"></li>
+						<li class="remember__item"></li>
+						<li class="remember__item"></li>
+						<li class="remember__item"></li>
+						<li class="remember__item"></li>
+					</ol>
+					<h2 class="remember__title title-light title_right">Вспомним.</h2>
+				</div>
+			</div>
+		</section>
+		<section class="theory">
+			<div class="container">
+				<div class="wrap">
+					<ul class="theory__list">
+						<li class="theory__item"><a href="#theory1">Селекторы. Как "достучаться" до блока, элемента?</a></li>
+						<li class="theory__item"><a href="#theory2">Важность селекторов.</a></li>
+						<li class="theory__item"><a href="#theory3">Методология БЭМ.</a></li>
+					</ul>
+					<h2 class="theory__title title_right">Немного теории.</h2>
+				</div>
+
+				<div class="theory-block" id="theory1">
+					<div class="theory-block-wrap">
+						<h4 class="theory-block__title">Селекторы. Как "достучаться" до блока, элемента?</h4>
+						<div class="wrap">
+							
+							<ul>
+								<li>Идентификатор <span class="attention">id</span></li>
+							</ul>
+							<table class="sl">
+								<tr><th>HTML:</th><th>CSS:</th><th>Результат</th></tr>
+								<tr>
+									<td class="col-25">&lt;div <span class="attention">id=”block”</span>&gt;&lt;/div&gt;</td>
+									<td class="col-25"><span class="attention">#block</span> {<br>background-color: red;<br>}</td>
+									<td>У элемента с <span class="attention">id=”block”</span> будет красный фон </td>
+								</tr>
+							</table><br>
+
+							<ul>
+								<li>Класс <span class="attention">class</span></li>
+							</ul>
+							<table class="sl">
+								<tr><th>HTML:</th><th>CSS:</th><th>Результат</th></tr>
+								<tr>
+									<td class="col-25">&lt;p <span class="attention">class=”text”</span>&gt;&lt;/p&gt;</td>
+									<td class="col-25"><span class="attention">.text</span> {<br>background-color: red;<br>}</td>
+									<td>У всех элементов с <span class="attention">class=”text”</span> будет красный фон </td>
+								</tr>
+							</table><br>
+
+							<ul>
+								<li>Теги <span class="attention">tag</span></li>
+							</ul>
+							<table class="sl">
+								<tr><th>HTML:</th><th>CSS:</th><th>Результат</th></tr>
+								<tr>
+									<td class="col-25"><span class="attention">&lt;p&gt;&lt;/p&gt;</span></td>
+									<td class="col-25"><span class="attention">p</span> {<br>background-color: red;<br>}</td>
+									<td>У всех параграфов <span class="attention">р</span> будет красный фон </td>
+								</tr>
+							</table><br>
+
+							<ul>
+								<li>Атрибуты <span class="attention">[...]</span></li>
+							</ul>
+							<table class="sl">
+								<tr><th>HTML:</th><th>CSS:</th><th>Результат</th></tr>
+								<tr>
+									<td class="col-25">&lt;input <span class="attention">type=”text”</span>&gt;<br>&lt;input <span class="attention">type=”number”</span>&gt;</td>
+									<td class="col-25"><inputspan class="attention">[type=”text”]</inputspan> {<br>background-color: red<br>}</td>
+									<td>только у элемента с атрибутом <span class="attention">type=”text”</span> будет красный фон </td>
+								</tr>
+							</table><br>
+
+
+							<ul>
+								<li>Универсальный селектор <span class="attention">*</span></li>
+							</ul>
+							<table class="sl">
+								<tr><th>HTML:</th><th>CSS:</th><th>Результат</th></tr>
+								<tr>
+									<td class="col-25">Все элементы на странице</td>
+									<td class="col-25"><span class="attention">*</span> {<br>background-color: red<br>}</td>
+									<td>Абсолютно у всех элементов страницы будет красный фон, т.е. стиль всех элементов будет одинаковый</td>
+								</tr>
+							</table><br>
+
+							<ul>
+								<li><span class="attention">Псевдо-элемент</span></li>
+							</ul>
+							<table class="sl">
+								<tr><th>HTML:</th><th>CSS:</th><th>Результат</th></tr>
+								<tr>
+									<td class="col-25"><span class="attention">&lt;p&gt; </span>Параграф 1&lt;/p&gt;<br><span class="attention">&lt;p&gt; </span>Параграф 2&lt;/p&gt;</td>
+									<td class="col-25">p<span>::first-letter</span> {<br>color: red;<br>}</td>
+									<td>У всех параграфов <span class="attention">первая буква</span> будет красной:<br>
+										<span class="attention">П</span>араграф 1<br>
+										<span class="attention">П</span>араграф 2
+									</td>
+								</tr>
+							</table><br>
+
+							<ul>
+								<li><span class="attention">Псевдо-класс</span>(например, применить стиль только к первому параграфу на странице)</li>
+							</ul>
+							<table class="sl">
+								<tr><th>HTML:</th><th>CSS:</th><th>Результат</th></tr>
+								<tr>
+									<td class="col-25"><span class="attention">&lt;p&gt; </span>Параграф 1&lt;/p&gt;<br><span class="attention">&lt;p&gt; </span>Параграф 2&lt;/p&gt;</td>
+									<td class="col-25">p<span class="attention">:first-child</span> {<br>color: red;<br>}</td>
+									<td>Только у первого параграфа будет фон красный</td>
+								</tr>
+							</table><br><br><br>
+						</div>
+					</div>
+				</div>
+
+
+
+
+
+				<div class="theory-block" id="theory2">
+					<div class="theory-block-wrap">
+						<h4 class="theory-block__title">Важность селекторов</h4>
+						<div class="wrap">
+							
+							<table class="iksweb">
+								<tbody>
+									<tr><th>Селектор</th><th>Важность селектора</th><th>Пример</th></tr>
+									<tr>
+										<td class="col-25">‘!important</td>
+										<td class="col-25">перекрывает все предыдущие стили</td>
+										<td>p {<br>color: red <span class="attention">!important</span>;<br>}</td>
+									</tr>
+									<tr>
+										<td class="col-25">inline-style </td>
+										<td class="col-25">+1000</td>
+										<td>&lt;p <span class="attention">style=”color: red”</span>&gt;Some text here&lt;/p&gt;</td>
+									</tr>
+									<tr>
+										<td class="col-25">id</td>
+										<td class="col-25">+100</td>
+										<td><span class="attention">#</span>aaaa</td>
+									</tr>
+									<tr>
+										<td class="col-25">class/pseudo class/attribute</td>
+										<td class="col-25">+10</td>
+										<td><span class="attention">.</span>aaaa</td>
+									</tr>
+									<tr>
+										<td class="col-25">tag</td>
+										<td class="col-25">+1</td>
+										<td><span class="attention">p {</span><br>color: red<br><span class="attention">}</span></td>
+									</tr>
+									<tr>
+										<td class="col-25">browser default</td>
+										<td class="col-25">0</td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+
+
+
+				<div class="theory-block" id="theory3">
+					<div class="theory-block-wrap">
+						<h4 class="theory-block__title">Методология БЭМ (Блок, Элемент, Модификатор).</h4>
+						<div class="wrap">
+							<div class="theory-block__img"><img src="img/content/lesson1_BEM/sample1.jpg" alt=""></div>
+
+							<div class="theory-block__content">
+								<h4></h4>
+								<p></p>
+								<div class="correctly">
+									<img src="" alt="" >
+									<div class="correctly__content">
+										<p></p>
+									</div>
+								</div>
+								<div class="wrong">
+									<img src="" alt="" >
+									<div class="wrong__content">
+										<p></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+		<section class="links">
+			<div class="container">
+				<div class="wrap">
+					<h2 class="links__title title_left">Полезные ссылочки.<br>Почитать. Посмотреть.</h2>
+					<ul class="links__list">
+						<li class="links__item"><a href="https://puzzleweb.ru/css/selectors.php">Больше о CSS селекторах.</a></li>
+						<li class="links__item">2</li>
+						<li class="links__item">3</li>
+						<li class="links__item">4</li>
+						<li class="links__item">5</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="practice">
+			<div class="container">
+				<div class="wrap">
+					<ul class="practice__list">
+						<li class="practice__item"><a href="#task1">1</a></li>
+						<li class="practice__item"><a href="#task2">2</a></li>
+					</ul>
+					<h2 class="practice__title title_right">Итак, отточим мастерство.<br>Практика на уроке.</h2>
+				</div>
+				<div class="task" id="task1">
+					<div class="task-wrap wrap">
+						<h4 class="task__title">Задание. Иконка instagram.</h4>
+						<div class="wrap">
+							<div class="task__img"><img src="img/content/lesson1_BEM/img block+elem.jpg" alt=""></div>
+							<div class="task__content">
+								<ol class="task__list">
+									<li class="task__item">1</li>
+									<li class="task__item">2</li>
+									<li class="task__item">3</li>
+									<li class="task__item">4</li>
+									<li class="task__item">5</li>
+									<li class="task__item">6</li>
+									<li class="task__item">7</li>
+									<li class="task__item">8</li>
+									<li class="task__item">9</li>
+									<li class="task__item">10</li>
+								</ol>
+								<a href="img/content/box-model.jpg" class="btn" target="_blank" download>скачать картинку</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="lesson-test">
+			<div class="container">
+				<div class="wrap">
+					<ol class="lesson-test__list list_blue">
+						<li class="lesson-test__item"></li>
+						<li class="lesson-test__item"></li>
+						<li class="lesson-test__item"></li>
+						<li class="lesson-test__item"></li>
+					</ol>
+					<h2 class="lesson-test__title title-light">Пройди тест.</h2>
+				</div>
+			</div>
+		</section>
+		<section class="home-work">
+			<div class="container">
+				<div class="wrap">
+					<h2 class="links__title title_left">Домашка.</h2>
+					<ol class="home-work__list">
+						<li class="home-work__item"></li>
+						<li class="home-work__item"></li>
+						<li class="home-work__item"></li>
+						<li class="home-work__item"></li>
+						<li class="home-work__item"></li>
+					</ol>
+				</div>
+			</div>
+		</section>	
+
+	</main>
+
+	<footer>
+		<section class="fixed-btn">
+			<div class="top btn-stroke">
+				<img src="img/controls/Arrow_up.png">
+			</div>
+		</section>
+		<section class="footer-copy">
+			<p>All rights reserved 2020 © Copyright LudMila with</p>
+			<img src="img/controls/heart.png" alt="">
+		</section>
+	</footer>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- 	<script src='js/slick.min.js'></script> -->
+	<!-- <script src="js/wow.min.js"></script> -->
+	<!-- <script>
+		new WOW().init();
+	</script> -->
+	<script src="js/main.js"></script>
+	<script>
+		var myHash = location.hash; //получаем значение хеша
+		location.hash = ''; //очищаем хеш
+		if(myHash[1] != undefined){ //проверяем, есть ли в хеше какое-то значение
+		    $('html, body').animate({scrollTop: $(myHash).offset().top - 100}, 2500); //скроллим за 2.5секунды не доходя до блока на 100px
+		};
+	</script>
+</body>
+</html>
